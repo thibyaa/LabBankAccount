@@ -52,8 +52,8 @@ public class LabBankAccountTest {
 
     @Test
     public void setNewDateOfBirth(){
-        labBankAccount.setLastName("dob");
-        assertThat(labBankAccount.getLastName()).isEqualTo("dob");
+        labBankAccount.setDateOfBirth("dob");
+        assertThat(labBankAccount.getDateOfBirth()).isEqualTo("dob");
     }
 
     @Test
@@ -95,6 +95,14 @@ public class LabBankAccountTest {
         Double actual = labBankAccount.withdrawal(321.56);
         Double expected = 321.56;
         assertThat(actual).isEqualTo(expected);
+    }
+
+    @Test
+    public void canPayInterest(){
+        Double actual = labBankAccount.payInterest(100.00);
+        Double expected = 110.00;
+        assertThat(actual).isEqualTo(expected);
+
     }
 }
 

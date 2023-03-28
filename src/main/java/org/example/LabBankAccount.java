@@ -29,10 +29,16 @@ public class LabBankAccount {
         } return withdrawalBalance;
     }
 
-    public Double payInterest() {
-           return this.balance *= 0.1;
+    public Double payInterest(double inputBalance) {
+        // get the current balance
+        this.balance = inputBalance;
+        // times the current balance by the interest rate
+        double interestRateMoney = inputBalance * 0.1;
+        //add this number to the balance to have an updated balance
+        double balanceWithInterestRate = interestRateMoney + this.balance;
+        // return new answer
+        return balanceWithInterestRate;
         }
-
 
 //    GETTERS AND SETTERS
     public String getFirstName(){
