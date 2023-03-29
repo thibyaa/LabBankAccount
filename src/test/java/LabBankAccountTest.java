@@ -82,6 +82,19 @@ public class LabBankAccountTest {
         assertThat(labBankAccount.getBalance()).isEqualTo(123.45);
     }
 
+    @Test
+    public void canAccountType(){
+        String actual = labBankAccount.getAccountType();
+        String expected = "";
+        assertThat(actual).isEqualTo(expected);
+    }
+
+    @Test
+    public void setNewAccountType(){
+        labBankAccount.setAccountType("Savings Account");
+        assertThat(labBankAccount.getAccountType()).isEqualTo("Savings Account");
+    }
+
 //    TEST FOR CUSTOM METHODS
     @Test
     public void balanceAfterDeposit(){
@@ -92,17 +105,17 @@ public class LabBankAccountTest {
 
     @Test
     public void balanceAfterWithdrawal(){
-        Double actual = labBankAccount.withdrawal(321.56);
-        Double expected = 321.56;
+        Double actual = labBankAccount.withdrawal(-2000.00);
+        Double expected = -2000.00;
         assertThat(actual).isEqualTo(expected);
     }
 
     @Test
     public void canPayInterest(){
-        Double actual = labBankAccount.payInterest(100.00);
+        Double actual = labBankAccount.payInterest(100.00, "Savings Account");
         Double expected = 110.00;
         assertThat(actual).isEqualTo(expected);
-
     }
+
 }
 
